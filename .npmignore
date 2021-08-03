@@ -1,1 +1,5 @@
-./test
+/test
+/src
+.prettierrc
+jest.config.js
+.eslintrc.js

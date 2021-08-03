@@ -1,6 +1,6 @@
 {
   "name": "steam-fetch-api",
-  "version": "0.0.1",
+  "version": "0.0.15",
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -8,7 +8,10 @@
     "test": "jest",
     "build": "tsc"
   },
-  "keywords": ["Steam", "Steam API"],
+  "keywords": [
+    "Steam",
+    "Steam API"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -23,6 +26,6 @@
   },
   "repository": {
     "type": "git",
-     "url": "https://github.com/Peterculazh/steam-fetch-api"
+    "url": "https://github.com/Peterculazh/steam-fetch-api"
   }
 }

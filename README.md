@@ -8,22 +8,16 @@
 
 > Getting data from known Steam API.
 
-## Install
+# Install
 
 ```sh
 npm install steam-fetch-api
 ```
 
-## Run tests
-
-```sh
-npm run test
-```
-
 ## Usage example
 
 ```js
-import { SteamFetchAPI } from 'steam-fetch-api';
+import SteamFetchAPI from 'steam-fetch-api';
 
 const steam = new SteamFetchAPI;
 
@@ -32,10 +26,40 @@ const getAllGames = async () => {
 }
 ```
 
+# Available API
+
+- ##### Get all games without data
+
+```js
+steam.getAllGames()
+```
+
+
+- ##### Get game by strict name
+
+```js
+steam.getStrictByName(name: string)
+```
+
+- ##### Get list of games name
+
+```js
+steam.getListByName(name: string)
+```
+
+- ##### Get game with details (data from Steam Big Picture API)
+
+```js
+steam.getGameDetails(appid: number)
+```
+
 ### Remarks
 
 - This package I created mostly for me. But I'm looking forward to continue develop it and improve both code and documentation;
 - Steam API is not documented officially, so there poor list of endpoints that collected community. Feel free share to share it with me by creating issue;
+- Currently I didn't faced request limits to Steam;
+
+
 
 ## Author
 

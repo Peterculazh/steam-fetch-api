@@ -3,7 +3,7 @@ import { IAllGames, IGamesListSingle } from './interfaces/allGames.interface';
 import { IFetchParams } from './interfaces/fetch.interface';
 import { IGameDetails, IGameWrapper } from './interfaces/gameDetails.interfaces';
 
-export class SteamFetchAPI {
+export default class SteamFetchAPI {
 
     private baseUrl = "https://api.steampowered.com";
     private storeUrl = "https://store.steampowered.com/api";

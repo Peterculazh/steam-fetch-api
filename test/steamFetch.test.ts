@@ -1,4 +1,4 @@
-import { SteamFetchAPI } from "../src";
+import SteamFetchAPI from "../src";
 import { IGameData } from '../src/interfaces/gameDetails.interfaces';
 
 describe('Testing fetching to steam', () => {

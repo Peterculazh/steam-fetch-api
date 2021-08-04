@@ -26,7 +26,7 @@ const getAllGames = async () => {
 }
 ```
 
-# Available API
+## Available API
 
 - ##### Get all games without data
 
@@ -51,6 +51,13 @@ steam.getListByName(name: string)
 
 ```js
 steam.getGameDetails(appid: number)
+```
+
+- #### Get game news. 
+<strong>Max length limit not includes html tags.</strong>
+
+```js
+steam.getGameDetails(appid: number, [newsCount: number, maxLength: number])
 ```
 
 ### Remarks

@@ -2,6 +2,9 @@ import * as superagent from 'superagent';
 import { IAllGames, IGamesListSingle } from './interfaces/allGames.interface';
 import { IFetchParams } from './interfaces/fetch.interface';
 import { IGameDetails, IGameWrapper } from './interfaces/gameDetails.interfaces';
+import { IGetAppNews } from './interfaces/getNewsForApp.interface';
+
+export * from './interfaces';
 
 export default class SteamFetchAPI {
 
@@ -12,8 +15,6 @@ export default class SteamFetchAPI {
     constructor(region?: string) {
         this.cc = region;
     }
-
-
 
     async get(url: string, baseUrl = this.baseUrl): Promise<any> {
         const params: IFetchParams = {};
@@ -50,5 +51,21 @@ export default class SteamFetchAPI {
         }
 
         return result[appid.toString()];
+    }
+
+    async getGameNews(appid: number, newsCount?: number, maxLength?: number): Promise<IGetAppNews> {
+        let url = `/ISteamNews/GetNewsForApp/v0002?appid=${appid}`;
+
+        if (newsCount) {
+            url = url.concat(`&count=${newsCount}`);
+        }
+
+        if (maxLength) {
+            url = url.concat(`&maxlength=${maxLength}`);
+        }
+
+        const result: IGetAppNews = await this.get(url);
+
+        return result;
     }
 }

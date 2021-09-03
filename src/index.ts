@@ -68,4 +68,10 @@ export default class SteamFetchAPI {
 
         return result;
     }
+
+    async getListByStartName(name: string): Promise<IGamesListSingle[]> {
+        const result = await this.getAllGames();
+
+        return result.applist.apps.filter(game => game.name.toLowerCase().startsWith(name));
+    }
 }

@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Steam Fetch API 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.19-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -41,10 +41,16 @@ steam.getAllGames()
 steam.getStrictByName(name: string)
 ```
 
-- ##### Get list of games name
+- ##### Get list of games by name (comparing on whole game's name)
 
 ```js
 steam.getListByName(name: string)
+```
+
+- ##### Get list of games by name (comparing on start game's name)
+
+```js
+steam.getListByStartName(name: string)
 ```
 
 - ##### Get game with details (data from Steam Big Picture API)

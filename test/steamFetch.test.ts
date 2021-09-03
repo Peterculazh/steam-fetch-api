@@ -4,7 +4,7 @@ describe('Testing fetching to steam', () => {
     let steamFetch: SteamFetchAPI;
 
     beforeAll(() => {
-        steamFetch = new SteamFetchAPI;
+        steamFetch = new SteamFetchAPI('us');
     });
 
     it(`should get Death Stranding in whole list of games`, async () => {
@@ -32,5 +32,12 @@ describe('Testing fetching to steam', () => {
         expect(result.appnews).not.toBeUndefined();
         expect(result.appnews?.newsitems.length).toBeGreaterThanOrEqual(3);
     });
+
+    it(`should get list of battlefields`, async () => {
+        const result = await steamFetch.getListByStartName('battlefield');
+
+        expect(result.length).toBeGreaterThanOrEqual(1);
+    })
+
 
 });
